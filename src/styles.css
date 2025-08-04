@@ -1,0 +1,371 @@
+/* Global Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6;
+  color: #111827;
+  line-height: 1.6;
+}
+
+.App {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #2563eb;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  color: #1f2937; /* darker text on light background */
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #1f2937; /* Gray-800 text for better visibility */
+  font-weight: 700;
+  border: 2px solid #cbd5e1; /* Tailwind slate-300 equivalent */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Weather Dashboard */
+.weather-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+/* Weather Card */
+.weather-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+}
+
+.weather-card h3 {
+  margin: 0 0 0.5rem;
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.weather-card .temp {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 0.25rem;
+}
+
+.weather-card .condition,
+.weather-card .wind {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Page Container */
+.page {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Trends Chart Styling */
+canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
+/* Planner Suggestions */
+.suggestions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.suggestion-box {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  text-align: center;
+}
+
+.suggestion-box h4 {
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* MapView container */
+.leaflet-container {
+  height: 500px;
+  width: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+}
+.recommendation-card {
+  background-color: #f0f8ff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation {
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border-left: 4px solid #4da6ff;
+}
+.recommendation-card {
+  background: #f0f4f8;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin: 1rem auto;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.recommendation-card:hover {
+  transform: scale(1.02);
+}
+
+.page h2 {
+  text-align: center;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.dashboard-container {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.dashboard-title {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #3f51b5;
+  font-weight: 700;
+}
+
+.weather-card {
+  background-color: #f1f3f5;
+  border-left: 6px solid #3f51b5;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.country {
+  font-weight: 400;
+  color: #555;
+}
+
+.temp {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #e53935;
+}
+
+.condition {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #555;
+}
+
+.wind {
+  font-size: 1rem;
+  color: #1e88e5;
+}
+
+.weather-card {
+  background: linear-gradient(135deg, #e0f2fe, #fff);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  min-height: 180px;
+  border-left: 6px solid #3b82f6;
+}
+
+.weather-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card h3 {
+  font-size: 1.25rem;
+  color: #111827;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.weather-card .country {
+  font-weight: 400;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.weather-card .temp {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ef4444; /* red for temp */
+  margin-bottom: 0.3rem;
+}
+
+.weather-card .condition {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #4b5563;
+  margin-bottom: 0.25rem;
+}
+
+.weather-card .wind {
+  font-size: 0.95rem;
+  color: #2563eb;
+}
+/* ---------- Trends Page Styling ---------- */
+.trends-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trends-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.trends-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.trends-container canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+/* App Title Styling */
+/* App Title Styling */
+/* App Title Styling with Icons */
+.app-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+}
+
+.app-title .icon {
+  font-size: 2.5rem;
+  background: linear-gradient(
+    to right,
+    #facc15,
+    #f97316
+  ); /* yellow-orange for sun */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-title .icon:last-child {
+  background: linear-gradient(
+    to right,
+    #60a5fa,
+    #0058e5
+  ); /* blue gradient for cloud */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-title .text {
+  background: linear-gradient(to right, #f97316, #0058e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
